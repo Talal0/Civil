@@ -1,0 +1,18 @@
+<div ng-controller="SuburbsController">
+
+    <angucomplete-alt id="ex1"
+
+        placeholder=""
+        text-no-results="No suburbs found"
+        pause="100"
+        selected-object="objectSelectedCallback"
+        local-data="suburbs"
+        search-fields="name"
+        title-field="name"
+        minlength="3"
+        input-class="form-control form-control-small"
+        match-class="highlight"
+        input-changed="postCodeSuburbInputChanged"
+    />
+
+</div>

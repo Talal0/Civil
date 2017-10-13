@@ -1,0 +1,63 @@
+<ion-view id="filterWindow" hide-nav-bar="false" ng-class="!currentView.clickEventsOn ? 'disable-pointer-events' : ''">
+
+    <ion-nav-title class="navTitle">
+        <div>{{ hardCodedData.view.filterWindow.winTitle }}</div>
+    </ion-nav-title>
+
+    <!-- BACK BUTTON -->
+    <ion-nav-buttons side="left">
+        <button class="button button-clear topNavButton" ng-click="coreServiceMethods.filterWindow.handleBackButtonClick(false);">
+            <img src="img/left_arrow.svg" class="navBarIcon navBarBackIcon">
+        </button>
+    </ion-nav-buttons>
+
+    <!-- SMALL LOGO IMG -->
+    <ion-nav-buttons side="right">
+        <button class="button button-clear topNavButton" ng-click="coreServiceMethods.content2.handleAppLogoClick();">
+            <img src="img/docsLogo.png" class="navBarIcon civil_app_icon">
+        </button>
+    </ion-nav-buttons>
+
+
+
+    <ion-content id="content" scroll="true">
+
+        <div id="innerContent">
+            <div id="mainContainer">
+                <div>
+                    <div class="title">{{ hardCodedData.view.filterWindow.myLocationCheckBox.label }}</div>
+                    <div>
+                        <input type="checkbox" class="checkbox" ng-model="filterWindow.myLocationChecked" ng-checked="filterWindow.myLocationChecked" ng-disabled="!filterWindow.gpsPostCode" />
+                    </div>
+                </div>
+                <div ng-hide="filterWindow.myLocationChecked">
+					<div class="title">{{ hardCodedData.view.filterWindow.option.label1 }}</div>
+                    <div>
+                        <postalcodes class="postalcodes"></postalcodes>
+                    </div>
+                    <div class="title">{{ hardCodedData.view.filterWindow.option.label2 }}</div>
+                    <div>
+                        <suburbs-auto-complete class="suburbsAutoComplete"></suburbs-auto-complete>
+                    </div>
+                </div>
+                <div>
+                    <div class="title">{{ hardCodedData.view.filterWindow.radius.label }}</div>
+                    <div>
+                        <input type="text" class="textbox" ng-model="filterWindow.activeRadius" />
+                    </div>
+                </div>
+            </div>
+            <div id="buttonContainer">
+                <div>
+                    <button class="button filterWindowBtn" ng-click="coreServiceMethods.filterWindow.handleSearchButtonClick();">{{ hardCodedData.view.filterWindow.button.label1 }}</button>
+                </div>
+                <div>
+                    <button class="button filterWindowBtn" ng-click="coreServiceMethods.filterWindow.handleResetButtonClick();">{{ hardCodedData.view.filterWindow.button.label2 }}</button>
+                </div>
+            </div>
+
+        </div>
+
+    </ion-content>
+
+</ion-view>

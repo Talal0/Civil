@@ -1,0 +1,70 @@
+<h1><code ng:non-bindable="">appModule</code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="appmodule-page"><p>- this is CivilConnect hybrid application main module</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="api/ionic">ionic</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="api/ngCordova">ngCordova</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="api/uiGmapgoogle-maps">uiGmapgoogle-maps</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="api/ngIOS9UIWebViewPatch">ngIOS9UIWebViewPatch</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="api/ngMocks">ngMocks</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_config">config($ionicConfigProvider, $urlRouterProvider, $stateProvider, $compileProvider)</h3>
+<div class="config"><div class="config-page"><p>- mainly defines app routes</p>
+</div><h5 id="methods_config_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>$ionicConfigProvider</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="config-page"><p>from ionic</p>
+</div></td></tr><tr><td>$urlRouterProvider</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="config-page"><p>from ui-router</p>
+</div></td></tr><tr><td>$stateProvider</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="config-page"><p>from ui-router</p>
+</div></td></tr><tr><td>$compileProvider</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="config-page"><p>from angular</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_run">run($ionicPlatform, $ionicHistory, $rootScope, $window, $timeout, coreService, apiDataManager, log, gps)</h3>
+<div class="run"><div class="run-page"><p>- defines events, most importantly $ionicPlatform.ready event</p>
+</div><h5 id="methods_run_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>$ionicPlatform</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="run-page"><p>from ionic</p>
+</div></td></tr><tr><td>$ionicHistory</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="run-page"><p>from ionic</p>
+</div></td></tr><tr><td>$rootScope</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="run-page"><p>from angular</p>
+</div></td></tr><tr><td>$window</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="run-page"><p>from angular</p>
+</div></td></tr><tr><td>$timeout</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="run-page"><p>from angular</p>
+</div></td></tr><tr><td>coreService</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="run-page"><p>custom</p>
+</div></td></tr><tr><td>apiDataManager</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="run-page"><p>custom</p>
+</div></td></tr><tr><td>log</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="run-page"><p>custom</p>
+</div></td></tr><tr><td>gps</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="run-page"><p>custom</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member event"><h2 id="events">Events</h2>
+<ul class="events"><li><h3 id="events_orientationchange">orientationchange</h3>
+<div class="orientationchange"><div class="orientationchange-page"><p>- belongs to $window from angular</p>
+<p>- fires up when orientation changes</p>
+</div><div class="inline"></div>
+<div class="inline"></div>
+</div>
+</li>
+<li><h3 id="events_ready">ready</h3>
+<div class="ready"><div class="ready-page"><p>- belongs to $ionicPlatform service of ionic</p>
+<p>- fires only once on app startup</p>
+<p>- cordova object is not defined until this event fires up</p>
+</div><div class="inline"></div>
+<div class="inline"></div>
+</div>
+</li>
+<li><h3 id="events_registerbackbuttonaction">registerBackButtonAction</h3>
+<div class="registerbackbuttonaction"><div class="registerbackbuttonaction-page"><p>- belongs to $ionicPlatform service of ionic</p>
+<p>- device back button click event</p>
+<p>- not available on iOS</p>
+</div><div class="inline"></div>
+<div class="inline"></div>
+</div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,7 @@
+>cmd.exe /k timeout 20 & "%ConEmuBaseDir%\CmdInit.cmd" -new_console:d:D:\Workspace\civil-connect-solutions\www & live-server --port=8100 -new_console:t:live-server
+
+cmd.exe /k "%ConEmuBaseDir%\CmdInit.cmd" -new_console:d:D:\Workspace\civil-connect-solutions & ionic serve -b -new_console:t:ionic
+
+cmd.exe /k "%ConEmuBaseDir%\CmdInit.cmd" -new_console:d:D:\Workspace\civil-connect-solutions & node server.js -new_console:t:node
+
+cmd.exe /k "%ConEmuBaseDir%\CmdInit.cmd" -new_console:d:D:\Workspace\civil-connect-solutions & git status -new_console:t:git

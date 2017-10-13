@@ -1,0 +1,11 @@
+{
+    "android": {
+        "release": {
+            "keystore": "civilconn-release-key.keystore",
+            "storePassword": "92a953c047ed5087367835a62e556666",
+            "alias": "gate_software_key2",
+            "password" : "92a953c047ed5087367835a62e556666",
+            "keystoreType": ""
+        }
+    }
+}

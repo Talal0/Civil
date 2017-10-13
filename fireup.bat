@@ -1,0 +1,1 @@
+ConEmu64 /cmd {civil}

@@ -1,0 +1,152 @@
+<ion-view id="content2View" hide-nav-bar="false" ng-class="!currentView.clickEventsOn ? 'disable-pointer-events' : ''">
+
+    <ion-nav-title class="navTitle">
+        <div ng-switch on="content2.collection">
+            <div ng-switch-when="undefined">{{ titles.content2 }}</div>
+            <div ng-switch-default>{{ titles.content2 }} ({{ content2.collection.length }})</div>
+        </div>
+    </ion-nav-title>
+
+    <!-- BACK BUTTON -->
+    <ion-nav-buttons side="left">
+        <button class="button button-clear topNavButton" ng-click="coreServiceMethods.content2.handleBackButtonClick(false);">
+            <img src="img/left_arrow.svg" class="navBarIcon navBarBackIcon">
+        </button>
+    </ion-nav-buttons>
+
+    <!-- SMALL LOGO IMG -->
+    <ion-nav-buttons side="right">
+        <button class="button button-clear topNavButton" ng-click="coreServiceMethods.content2.handleAppLogoClick();">
+            <img src="img/docsLogo.png" class="navBarIcon civil_app_icon">
+        </button>
+    </ion-nav-buttons>
+
+
+
+    <ion-content scroll="false">
+        <div id="content2ViewGrid" class="row row-center">
+
+            <div id="mainArea" class="col col-center flex_fullyExpanded_1">
+
+                <div class="flex_fullyExpanded_2">
+
+                    <!-- MAP VIEW -->
+                    <div id="mapContainer" ng-show="!currentView.spinnerVisible && content2.mapViewOn" ng-cloak>
+
+                        <!-- GOOGLE MAP -->
+                        <div
+                            ng-show="content2.mainGoogleMapVisible"
+                            id="mainGoogleMap"
+                            class="flex_fullyExpanded_3"
+                            data-tap-disabled="true"
+                            ng-cloak
+                        ></div>
+
+                        <!-- NO GOOGLE MAP -->
+                        <div class="flex_fullyExpanded_3 centeredInfoText"  ng-show="!content2.mainGoogleMapVisible" ng-cloak>
+
+                            <!-- NO MAP INFO -->
+                            <div class="flex_centered_1" ng-show="content2.noMapInfoVisible" ng-cloak>{{ hardCodedData.view.shared.noMapInfo }}</div>
+                        </div>
+
+                    </div>
+
+                    <!-- LIST VIEW -->
+                    <div ng-show="!currentView.spinnerVisible && !content2.mapViewOn" ng-cloak>
+
+                        <ion-scroll
+                            id="listContainer"
+                            class="flex_fullyExpanded_3"
+                            direction="y"
+                            delegate-handle="content2Handle"
+                            ng-cloak
+                        >
+
+                            <banners></banners>
+
+                            <!-- COMPANIES -->
+                            <ion-item
+                                class="singleListItem tallListItem"
+                                item-width="0"
+                                item-height="110px"
+                                item-render-buffer="10"
+                                collection-repeat="item in content2.collection"
+                            >
+
+                                <!-- COMPANY ITEM -->
+                                <div
+                                    class="item-icon-right"
+                                    ng-class="activeIdServiceData.company.id == item.id ? 'activeSingleListItem': ''"
+                                    on-tap="coreServiceMethods.content2.handleItemChoose({ 'clickedItemId': item.id });"
+                                >
+                                    <div class="tallListItemContentContainer">
+                                        <div>
+                                            <img ng-if="content2.mainMapInstance != undefined && item.logoLocation.length > 0" ng-src="{{ item.logoLocation }}" />
+                                            <img ng-if="content2.mainMapInstance == undefined || item.logoLocation.length == 0" src="img/nophoto.png" />
+                                        </div>
+                                        <div>
+                                            <p ng-bind="item.name"></p>
+                                            <p>{{ item.address }}, {{ item.city }}, {{ item.county }} {{ item.postalCode }}</p>
+                                            <p>Tel:&nbsp;<a ng-href="tel: {{ item.phone }}">{{ item.phone }}</a></p>
+                                            <p
+                                                    ng-if="(item.package_id != 1)  && (item.facebook != '' || item.googlep != '' || item.twitter != '')"
+                                               style="font-size: 10px; color:grey;">Follow us :
+                                                <a ng-if="item.facebook != ''" title="Follow us on Facebook" target="_blank" rel="nofollow"
+                                                    class="share-social facebook" href="{{item.facebook}}">
+                                                    <img ng-src="img/fb.png" style="width: 20px">
+                                                </a>
+                                                <a ng-if="item.googlep != ''" title="Follow us on Google Plus" target="_blank"
+                                                   rel="nofollow"  href="{{item.googlep}}">
+                                                    <img ng-src="img/googlep.png" style="width: 20px">
+                                                </a>
+                                                <a ng-if="item.twitter != ''" title="Follow us on Twitter"
+                                                   target="_blank"
+                                                   rel="nofollow" href="{{item.twitter}}">
+                                                    <img ng-src="img/twitter.png" style="width: 20px">
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <i class="icon bigIcon ion-chevron-right"></i>
+                                </div>
+
+                            </ion-item>
+
+                            <advertise-banner></advertise-banner>
+
+                        </ion-scroll>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="navArea" class="col col-center" ng-switch on="content2.mapViewOn">
+                <div class='stateIcon clickevent' on-tap="coreServiceMethods.content2.handleNavPanelIconClick('stateIcon');">
+                    <div class='stateIcon'></div>
+                </div>
+                <div class='postcodeIcon clickevent' on-tap="coreServiceMethods.content2.handleNavPanelIconClick('postcodeIcon');">
+                    <div class='postcodeIcon'></div>
+                </div>
+                <div class='mapIcon clickevent' ng-switch-when="false" on-tap="coreServiceMethods.content2.handleNavPanelIconClick('mapIcon');">
+                    <div class='mapIcon'></div>
+                </div>
+                <div class='listIcon clickevent' ng-switch-when="true" on-tap="coreServiceMethods.content2.handleNavPanelIconClick('listIcon');">
+                    <div class='listIcon'></div>
+                </div>
+                <div class='reloadIcon clickevent' on-tap="coreServiceMethods.content2.handleNavPanelIconClick('reloadIcon');">
+                    <div class='reloadIcon'></div>
+                </div>
+            </div>
+
+        </div>
+    </ion-content>
+
+    <div class="flex_centered_1" ng-cloak>
+        <div class="flex_centered_2" ng-show="currentView.spinnerVisible">
+            <ion-spinner icon="{{ currentOs.toLowerCase(); }}"></ion-spinner>
+        </div>
+    </div>
+
+</ion-view>

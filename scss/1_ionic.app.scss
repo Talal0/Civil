@@ -1,0 +1,56 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default column-rule-style:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+
+
+// My overridings
+
+$stable: #D9D9D9;
+$dark: #00305e;
+$bar-height: 55px;
+
+
+
+.scroll { height: 100%; }
+.scroll-bar-indicator { display: none; }
+.spinner svg {
+	stroke: #87c002;
+	width: 40px !important;
+	height: 40px !important;
+}
+.icon { font-size: 1.1em !important; }
+
+
+
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header { height: 55px !important; }
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) { height: 55px !important; }
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader).item-input-inset .item-input-wrapper { margin-top: 0px !important; }
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * { margin-top: 0px !important; }
+.platform-ios.platform-cordova:not(.fullscreen) .tabs-top > .tabs, .platform-ios.platform-cordova:not(.fullscreen) .tabs.tabs-top { top: 55px !important; }
+.platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader { top: 55px !important; }
+.platform-ios.platform-cordova:not(.fullscreen) .has-subheader { top: 110px !important; }
+
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// Including custom variables
+@import '_vars';

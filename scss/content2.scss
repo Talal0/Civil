@@ -1,0 +1,214 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none !important; }
+
+#content2View {
+
+	a {
+		color: $color2;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	color: $royal;
+	background-color: $color6;
+
+	#content2ViewGrid {
+		height: 100%;
+		padding: 0;
+
+		@media screen and (orientation:portrait) {
+
+			-webkit-box-direction: normal;
+			-moz-box-direction: normal;
+			-webkit-box-orient: vertical;
+			-moz-box-orient: vertical;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+		}
+
+		#mainArea {
+			margin: 0;
+			padding: 0;
+			height: 500px;
+
+			#mapContainer {
+				&.ng-hide {
+					display: block !important;
+					opacity: 0;
+				}
+				&.ng-hide-add {
+					opacity: 0;
+				}
+				&.ng-hide-remove {
+					opacity: 1;
+				}
+
+				#mainGoogleMap {
+					&.ng-hide {
+						display: block !important;
+						opacity: 0;
+					}
+					&.ng-hide-add {
+						opacity: 0;
+					}
+					&.ng-hide-remove {
+						opacity: 1;
+					}
+					.angular-google-map {
+						height: 100%;
+					}
+					.angular-google-map-container {
+						height: 100%;
+					}
+				}
+			}
+
+			#listContainer {
+				width: 100%;
+
+				.tallListItem {
+					padding: 0;
+					margin: 0;
+
+					.bannerContainer1 {
+						display: table;
+						width: 100%;
+						height: 110px;
+						table-layout: fixed;
+
+						.bannerContainer2, .bannerContainer2_appLogo {
+							display: table-cell;
+							vertical-align: middle;
+							width: 100%;
+							height: 100px;
+
+							.bannerImg {
+								display: block;
+								width: auto;
+								height: auto;
+								max-width: 100%;
+								margin: 0 auto;
+								cursor: pointer;
+							}
+						}
+
+						.bannerContainer2 {
+							background-color: $color3;
+							padding: 5px;
+							.bannerImg { max-height: 100px; }
+						}
+
+						.bannerContainer2_appLogo {
+							background-color: $color2;
+							padding: 15px;
+							.bannerImg { max-height: 80px; }
+						}
+					}
+					.tallListItemContentContainer {
+						display: table;
+						table-layout: fixed;
+						width: 100%;
+						height: 110px;
+
+						> div {
+							display: table-cell;
+							vertical-align: middle;
+						}
+						> div:first-child {
+							width: 30%;
+							img {
+								max-width: 100%;
+								max-height: 98px;
+								vertical-align: middle;
+								padding: 0 0 0 10px;
+							}
+						}
+						> div:last-child {
+							padding-left: 15px;
+							p {
+								color: black;
+								line-height: 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+		#navArea {
+			max-height: $navAreaSize;
+			margin: 0;
+			padding: 0;
+			display: table;
+
+			> div {
+				display: table-cell;
+				width: $navAreaSize;
+				height: $navAreaSize;
+				vertical-align: middle;
+				border: 1px solid $bar-default-border;
+				border-left: none;
+				cursor: pointer;
+				background-color: $color3;
+			}
+			> div:last-child {
+				border-right: none;
+			}
+			.fa {
+				width: $navAreaSize;
+				margin-top: 4px;
+			}
+		}
+		@media screen and (orientation: landscape) {
+
+			#mainArea, #navArea {
+				height: 100%;
+			}
+			#navArea {
+				display: block;
+				max-width: $navAreaSize;
+				max-height: 100%;
+
+				> div {
+					display: table;
+					width: 100%;
+					border: none;
+					border-left: 1px solid $bar-default-border;
+					border-bottom: 1px solid $bar-default-border;
+					height: 25%;
+
+					> div {
+						display: table-cell;
+						vertical-align: middle;
+					}
+				}
+				> div:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
+
+
+
+.mapIcon, .listIcon, .postcodeIcon, .reloadIcon, .stateIcon {
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.mapIcon {
+	background-image: url('../img/mapview.png');
+}
+.listIcon {
+	background-image: url('../img/listview.png');
+}
+.postcodeIcon {
+	background-image: url('../img/postcode.png');
+}
+.reloadIcon {
+	background-image: url('../img/reload.png');
+}
+.stateIcon {
+	background-image: url('../img/state.png');
+}

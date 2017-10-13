@@ -1,0 +1,18 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none !important; }
+
+#content1View {
+	background-color: $color6;
+
+	#listContainer {
+		width: 100%;
+		margin-bottom: 1px;
+
+		ion-item:not(.activeSingleListItem) {
+			padding-left: 18px;
+		}
+
+		#catListItemsContainer {
+			padding: 18px 55px 0 0;
+		}
+	}
+}

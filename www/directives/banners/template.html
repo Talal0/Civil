@@ -1,0 +1,12 @@
+<ion-item
+    ng-repeat="item in view.banners"
+    on-tap="coreServiceMethods.openWebPage(item.url);"
+    class="banners"
+>
+    <div>
+        <img
+            class="bannerImg gsBannerImg"
+            ng-src="{{ item.big_imag_url }}"
+        >
+    </div>
+</ion-item>

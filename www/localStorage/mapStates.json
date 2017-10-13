@@ -1,0 +1,34 @@
+[
+    {
+        "id":"90d991b47098ceef3d8283a386cf7e91",
+        "name":"ACT"
+    },
+    {
+        "id":"7fd51c89695b098a88a38f57ae4bfb2d",
+        "name":"NSW"
+    },
+    {
+        "id":"cb48af3e40ab9ec3622c07b8faf27cf3",
+        "name":"NT"
+    },
+    {
+        "id":"c6f45fe1ff59e2232e252c632252c728",
+        "name":"QLD"
+    },
+    {
+        "id":"3dd6b9265ff18f31dc30df59304b0ca7",
+        "name":"SA"
+    },
+    {
+        "id":"f4e1b83458954d7218793cee79be80b0",
+        "name":"TAS"
+    },
+    {
+        "id":"d48afc599a256e036954100b5cfbe360",
+        "name":"VIC"
+    },
+    {
+        "id":"4306a04670067b5b27e766335d3d40fa",
+        "name":"WA"
+    }
+]

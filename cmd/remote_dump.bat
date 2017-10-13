@@ -1,0 +1,1 @@
+mongodump -u admin -p QEv7QfXSLhsW --host localhost --port 37436

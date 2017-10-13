@@ -1,0 +1,1 @@
+json-server --watch ../www/db/remoteDB.json

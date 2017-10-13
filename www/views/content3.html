@@ -1,0 +1,104 @@
+<ion-view
+        id="content3View"
+        hide-nav-bar="false"
+        ng-class="!currentView.clickEventsOn ? 'disable-pointer-events' : ''"
+>
+
+    <ion-nav-title class="navTitle">
+        <div>{{ titles.content3 }}</div>
+    </ion-nav-title>
+
+    <!-- BACK BUTTON -->
+    <ion-nav-buttons side="left">
+        <button class="button button-clear topNavButton"
+                ng-click="coreServiceMethods.content3.handleBackButtonClick(false);">
+            <img src="img/left_arrow.svg" class="navBarIcon navBarBackIcon">
+        </button>
+    </ion-nav-buttons>
+
+    <!-- SMALL LOGO IMG -->
+    <ion-nav-buttons side="right">
+        <button class="button button-clear topNavButton"
+                onclick="angular.element('body').scope().coreServiceMethods.openWebPage(angular.element('body').scope().hardCodedData.view.shared.logoHref);">
+            <img src="img/docsLogo.png" class="navBarIcon civil_app_icon">
+        </button>
+    </ion-nav-buttons>
+
+
+    <ion-content delegate-handle="content3Handle" scroll="true">
+        <div id="section1">
+            <div class="topSection">
+                <div>{{ content2.activeCompanyObject.name }}</div>
+                <div><img src="img/down_arrow.svg" class="downArrow"/></div>
+            </div>
+            <hr noshade>
+            <div id="logoContainer">
+                <img ng-if="content2.mainMapInstance != undefined && content2.activeCompanyObject.logoLocation.length > 0"
+                     ng-src="{{ content2.activeCompanyObject.logoLocation }}">
+                <img ng-if="content2.mainMapInstance == undefined || content2.activeCompanyObject.logoLocation.length == 0"
+                     ng-src="img/nophoto.png">
+            </div>
+        </div>
+        <div id="section2">
+            <div id="detailsContainer">
+                <p>{{ content2.activeCompanyObject.address }}, {{ content2.activeCompanyObject.city }}, {{
+                    content2.activeCompanyObject.county }} {{ content2.activeCompanyObject.postalCode }}</p>
+                <p>Telephone:&nbsp;<a ng-href="tel: {{ content2.activeCompanyObject.phone }}">{{
+                    content2.activeCompanyObject.phone }}</a></p>
+                <p><a on-tap="coreServiceMethods.openWebPage(content2.activeCompanyObject.website);">Go to website</a>
+                </p>
+                <p ng-if="(content2.activeCompanyObject.package_id != 1) && (content2.activeCompanyObject.facebook != '' || content2.activeCompanyObject.googlep != '' || content2.activeCompanyObject.twitter != '') " style="display:
+                block;font-size: 10px; color:grey;">Follow us :
+                    <a ng-if="content2.activeCompanyObject.facebook != ''" title="Follow us on Facebook" target="_blank"
+                       rel="nofollow" class="share-social facebook"
+                       href="{{content2.activeCompanyObject.facebook}}">
+                        <img ng-src="img/fb.png" style="width: 20px">
+                    </a>
+                    <a ng-if="content2.activeCompanyObject.googlep != ''" title="Follow us on Google Plus" target="_blank"
+                       rel="nofollow" href="{{content2.activeCompanyObject.googlep}}">
+                        <img ng-src="img/googlep.png" style="width: 20px">
+                    </a>
+                    <a ng-if="content2.activeCompanyObject.twitter != ''" title="Follow us on Twitter"
+                       target="_blank"
+                       rel="nofollow" href="{{content2.activeCompanyObject.twitter}}">
+                        <img ng-src="img/twitter.png" style="width: 20px">
+                    </a>
+                </p>
+            </div>
+            <div class="topSection">
+                <div>{{ hardCodedData.view.content3.title1 }}</div>
+                <div><img src="img/down_arrow.svg" class="downArrow"/></div>
+            </div>
+            <hr noshade>
+            <div id="descriptionContainer"
+                 ng-bind-html="content2.activeCompanyObject.description | htmlToPlainText"></div>
+        </div>
+        <div id="section3">
+            <div class="topSection">
+                <div ng-if="app.currentOs == 'Android'">{{ hardCodedData.view.content3.title2 }} - <a
+                        ng-href="geo:0,0?q={{ content2.activeCompanyObject.latitude }}, {{ content2.activeCompanyObject.longitude }}">Directions</a>
+                </div>
+                <div ng-if="app.currentOs == 'iOS'">{{ hardCodedData.view.content3.title2 }} - <a
+                        ng-href="maps:0,0?q={{ content2.activeCompanyObject.latitude }}, {{ content2.activeCompanyObject.longitude }}">Directions</a>
+                </div>
+                <div><img src="img/down_arrow.svg" class="downArrow"/></div>
+            </div>
+            <hr noshade>
+
+            <div id="downSection">
+                <div id="noMapInfoContainer" class="centeredInfoText" ng-show="content2.noMapInfoVisible">
+                    <div>{{ hardCodedData.view.shared.noMapInfo }}</div>
+                </div>
+                <div id="smallGoogleMap" data-tap-disabled="true" ng-show="content2.smallGoogleMapVisible"></div>
+            </div>
+
+        </div>
+    </ion-content>
+
+    <div class="flex_centered_1" ng-cloak>
+        <div class="flex_centered_2" ng-show="currentView.spinnerVisible">
+            <ion-spinner icon="{{ currentOs.toLowerCase(); }}"></ion-spinner>
+        </div>
+    </div>
+
+</ion-view>

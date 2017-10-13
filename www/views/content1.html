@@ -1,0 +1,57 @@
+<ion-view id="content1View" hide-nav-bar="false" ng-class="!currentView.clickEventsOn ? 'disable-pointer-events' : ''">
+
+	<ion-nav-title class="navTitle"><div>{{ content1.topNavTitle }}</div></ion-nav-title>
+
+	<!-- BACK BUTTON -->
+    <ion-nav-buttons side="left">
+        <button
+            class="button button-clear topNavButton"
+            ng-click="coreServiceMethods.content1.handleBackButtonClick(false);"
+            ng-hide="activeIdServiceMethods.getActiveCollectionName() == 'mapStates'"
+        >
+            <img src="img/left_arrow.svg" class="navBarIcon navBarBackIcon">
+        </button>
+    </ion-nav-buttons>
+
+    <!-- RELOAD BUTTON -->
+    <ion-nav-buttons side="right">
+        <button class="button button-clear topNavButton" ng-click="coreServiceMethods.content1.handleRefreshButtonClick();">
+            <i class="ion-ios-refresh navBarIcon navBarRefreshIcon"></i>
+        </button>
+    </ion-nav-buttons>
+
+	<ion-content id="listContainer" scroll="true" delegate-handle="content1Handle" ng-cloak>
+
+        <banners ng-hide="activeIdServiceMethods.getActiveCollectionName() == 'mapStates'"></banners>
+
+		<ion-item
+			collection-repeat="item in content1.collection"
+			ng-class="content1.highlightedItemIndex == item.id ? 'singleListItem activeSingleListItem': 'singleListItem'"
+			item-width="0"
+			item-height="60px"
+			item-render-buffer="10"
+			on-tap="coreServiceMethods.content1.handleItemChoose({ 'clickedItemId': item.id });"
+		>
+
+			<!-- CAT LIST ITEM -->
+			<div id="catListItemsContainer">
+				<div ng-if="content1.highlightedItemIndex == item.id" class="item-icon-left">
+					<i class="icon ion-checkmark-circled"></i>
+					<div class="singleListItem activeSingleListItem">{{ item.name }}</div>
+				</div>
+				<div ng-if="content1.highlightedItemIndex != item.id">{{ item.name }}</div>
+				<div class="item-icon-right"><i class="icon ion-chevron-right"></i></div>
+			</div>
+		</ion-item>
+
+		<advertise-banner></advertise-banner>
+
+	</ion-content>
+
+	<div class="flex_centered_1" ng-cloak>
+        <div class="flex_centered_2" ng-show="currentView.spinnerVisible">
+            <ion-spinner icon="{{ currentOs.toLowerCase(); }}"></ion-spinner>
+        </div>
+    </div>
+
+</ion-view>

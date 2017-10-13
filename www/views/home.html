@@ -1,0 +1,19 @@
+<ion-view id="homeView" hide-nav-bar="true" ng-class="!currentView.clickEventsOn ? 'disable-pointer-events' : ''">
+
+	<ion-content scroll="false">
+		<div id="homeViewGrid" ng-cloak>
+			<div id="area1">
+	        	<div id="civilAppLogoContainer">
+					<img src="img/docsLogo.png" onclick="angular.element('body').scope().coreServiceMethods.openWebPage(angular.element('body').scope().hardCodedData.view.shared.logoHref);" />
+				</div>
+				<div id="homeViewButtonContainer">
+					<button id="homeViewButton" class="button" onclick="angular.element('body').scope().coreServiceMethods.home.handleSelectStateButtonClick();">{{ hardCodedData.view.home.button1Text }}</button>
+				</div>
+	        </div>
+	        <div id="area2" ng-hide="!home.mapImgVisible" ng-cloak>
+	   			<div id="area2_1" ng-hide="!home.mapImgVisible" ng-cloak></div>
+	        </div>
+		</div>
+	</ion-content>
+
+</ion-view>

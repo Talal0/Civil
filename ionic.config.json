@@ -1,0 +1,62 @@
+{
+  "name": "civil-connect-solutions",
+  "app_id": "au.com.civilconnect.app",
+  "gulpStartupTasks": [
+    "sass",
+    "js",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/css/*"
+  ],
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://www.civilconnectapp.com.au/api"
+    },
+    {
+      "path": "/app",
+      "proxyUrl": "http://localhost:7100/app"
+    },
+    {
+      "path": "/nav",
+      "proxyUrl": "http://localhost:7100/nav"
+    },
+    {
+      "path": "/id",
+      "proxyUrl": "http://localhost:7100/id"
+    },
+    {
+      "path": "/gps",
+      "proxyUrl": "http://localhost:7100/gps"
+    },
+    {
+      "path": "/http",
+      "proxyUrl": "http://localhost:7100/http"
+    },
+    {
+      "path": "/promise",
+      "proxyUrl": "http://localhost:7100/promise"
+    },
+    {
+      "path": "/apiDataMgr",
+      "proxyUrl": "http://localhost:7100/apiDataMgr"
+    },
+    {
+      "path": "/memory",
+      "proxyUrl": "http://localhost:7100/memory"
+    },
+    {
+      "path": "/dialog",
+      "proxyUrl": "http://localhost:7100/dialog"
+    },
+    {
+      "path": "/map",
+      "proxyUrl": "http://localhost:7100/map"
+    }
+  ],
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1"
+}

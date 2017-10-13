@@ -1,0 +1,1 @@
+7z a -tzip C:\Users\Kamil\Desktop\civil.zip D:\Workspace\civil-connect-solutions\www

@@ -1,0 +1,1 @@
+adb -s 99869156 install -r ..\platforms\android\build\outputs\apk\android-debug-unaligned.apk

@@ -1,0 +1,18 @@
+<div ng-controller="PostalcodesController">
+
+    <angucomplete-alt id="ex2"
+
+        placeholder=""
+        text-no-results="No postal codes found"
+        pause="100"
+        selected-object="objectSelectedCallback"
+        local-data="postalcodes"
+        search-fields="name"
+        title-field="name"
+        minlength="2"
+        input-class="form-control form-control-small"
+        match-class="highlight"
+        input-changed="postalCodesInputChanged"
+    />
+
+</div>

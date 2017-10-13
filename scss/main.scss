@@ -1,0 +1,67 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none !important; }
+
+@font-face {
+  font-family: 'Questrial-Regular';
+  src: url('../fonts/Questrial-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Merriweather-Regular';
+  src: url('../fonts/Merriweather-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Poppins-Regular';
+	src: url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+
+
+body {
+	display: none;
+	background-color: $color3 !important;
+}
+
+.navBar {
+	background-color: $color8;
+
+	>:active {
+		color: yellow;
+	}
+}
+
+.navTitle {
+	font-weight: normal !important;
+	color: $color3 !important;
+	font-size: 15px !important;
+}
+
+.topNavButton {
+	width: 40px;
+}
+
+.navBarIcon {
+
+}
+
+.navBarBackIcon {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	top: 6px;
+	left: 4px;
+}
+
+.navBarRefreshIcon {
+	color: white !important;
+	font-size: 35px !important;
+	position: relative;
+	top: 4px !important;
+	right: 5px;
+}
+
+.civil_app_icon {
+	height: 30px;
+	position: relative;
+	top: 6px !important;
+	right: 15px;
+}

@@ -1,0 +1,34 @@
+<div id="infoWindow">
+	<div id="logoContainer">
+		<img ng-if="content2.activeMarker.logoLocation.length > 0" ng-src="{{ content2.activeMarker.logoLocation }}">
+		<img ng-if="content2.activeMarker.logoLocation.length == 0" ng-src="img/nophoto.png">
+	</div>
+	<div id="textContainer">
+		<p class="text text1">{{ content2.activeMarker.name }}
+
+        </p>
+		<p class="text text2">{{ content2.activeMarker.address }}, {{ content2.activeMarker.city }}, {{ content2.activeMarker.county }} {{ content2.activeMarker.postalCode }}</p>
+        <p
+                ng-if="(content2.activeMarker.package_id != 1) && (content2.activeMarker.facebook != '' || content2.activeMarker.googlep != '' || content2.activeMarker.twitter != '')" style="display:
+        block;font-size: 10px; color:grey;">Follow us :
+            <a ng-if="content2.activeMarker.facebook != ''" title="Follow us on Facebook" target="_blank" rel="nofollow" class="share-social facebook"
+                href="{{content2.activeMarker.facebook}}">
+                <img ng-src="img/fb.png" style="width: 20px">
+            </a>
+            <a ng-if="content2.activeMarker.googlep != ''" title="Follow us on Google Plus" target="_blank"
+               rel="nofollow"  href="{{content2.activeMarker.googlep}}">
+                <img ng-src="img/googlep.png" style="width: 20px">
+            </a>
+            <a ng-if="content2.activeMarker.twitter != ''" title="Follow us on Twitter"
+               target="_blank"
+               rel="nofollow" href="{{content2.activeMarker.twitter}}">
+                <img ng-src="img/twitter.png" style="width: 20px">
+            </a>
+        </p>
+		<hr class="">
+		<div id="viewMoreButtonContainer">
+			<button id="viewMoreButton" class="button" ng-click="coreServiceMethods.content2.handleItemChoose({ 'clickedItemId': content2.activeMarker.id });">{{ hardCodedData.view.infoWindow.viewMoreButtonText }}</button>
+		</div>
+
+	</div>
+</div>

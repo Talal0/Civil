@@ -1,0 +1,160 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none !important; }
+
+
+
+#filterWindow {
+
+	font-family: 'Poppins-Regular', sans-serif;
+	font-size: 0.8em;
+	background-color: $color6;
+
+	input { text-align: center; }
+
+	#content {
+
+		#innerContent {
+
+			position: relative;
+  			top: 50%;
+  			transform: translateY(-50%);
+
+			#mainContainer {
+
+				width: 100%;
+
+				> div {
+
+					width: 100%;
+
+					@media screen and (orientation:landscape) {
+
+						display: inline-block;
+						width: 32%;
+						vertical-align: middle;
+					}
+
+					> div:first-child {
+						text-align: center;
+						padding: 10px 0 0 0;
+						color: $color1;
+
+						white-space: nowrap;
+						overflow: hidden;
+		    			text-overflow: ellipsis;
+
+						height: 40px;
+
+		    			.select {
+							width: 75%;
+							max-width: 225px;
+							height: 30px;
+							text-align: center;
+							padding-left: 3px;
+							border: 1px solid $color1;
+
+							white-space: nowrap;
+    						overflow: hidden !important;
+    						text-overflow: ellipsis;
+
+    						background-color: $color3;
+						}
+					}
+
+					> div:last-child {
+
+						overflow: visible;
+						width: 100%;
+						height: 40px;
+						padding: 5px 0 5px 0;
+
+						input {
+							width: 75%;
+							max-width: 225px;
+							height: 30px;
+							padding-left: 5px;
+							border: 1px solid $color1;
+							vertical-align: middle;
+							margin: 0 auto;
+						}
+
+						.checkbox { width: 28px; margin: 0 5px 0 5px; }
+						.textbox { width: 75%; max-width: 225px; text-align: center; }
+
+						.suburbsAutoComplete {
+							.angucomplete-dropdown {
+								position: relative;
+								margin: 0 auto;
+								padding: 2px;
+								overflow-y: auto;
+    							max-height: 200px;
+							}
+							.angucomplete-row {
+							    font-size: 13px;
+							    margin-bottom: 0;
+							    padding: 4px;
+							    white-space: nowrap;
+    							overflow: hidden !important;
+    							text-overflow: ellipsis;
+							}
+							.angucomplete-selected-row {
+							    background-color: $color2;
+							}
+							.angucomplete-searching {
+
+							}
+						}
+					}
+
+					> div.title {
+						padding-top: 17px;
+					}
+				}
+			}
+			#buttonContainer {
+
+				display: table;
+				margin-top: 20px;
+				width: 100%;
+				max-width: 100%;
+				height: 60px;
+				text-align: center;
+
+				> div {
+					display: table-cell;
+					width: 50%;
+				}
+
+				> div:first-child { text-align: right; padding-right: 5px; }
+				> div:last-child { text-align: left; padding-left: 5px; }
+
+				.filterWindowBtn {
+
+					width: 100%;
+					max-width: 90px;
+					line-height: 1.3em;
+					border: none;
+					border-radius: 5px;
+					font-weight:  normal;
+					font-family: 'Poppins-Regular', sans-serif;
+					color: $color8;
+					padding: 3px 0 0 0;
+
+					background: rgba(161,230,0,1);
+					background: -moz-linear-gradient(top, rgba(161,230,0,1) 0%, rgba(132,184,0,1) 100%);
+					background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(161,230,0,1)), color-stop(100%, rgba(132,184,0,1)));
+					background: -webkit-linear-gradient(top, rgba(161,230,0,1) 0%, rgba(132,184,0,1) 100%);
+					background: -o-linear-gradient(top, rgba(161,230,0,1) 0%, rgba(132,184,0,1) 100%);
+					background: -ms-linear-gradient(top, rgba(161,230,0,1) 0%, rgba(132,184,0,1) 100%);
+					background: linear-gradient(to bottom, rgba(161,230,0,1) 0%, rgba(132,184,0,1) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1e600', endColorstr='#84b800', GradientType=0 );
+
+					-webkit-box-shadow: 2px 2px 1px 0px $color1;
+					-moz-box-shadow: 2px 2px 1px 0px $color1;
+					box-shadow: 2px 2px 1px 0px $color1;
+
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}

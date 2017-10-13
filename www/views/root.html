@@ -1,0 +1,13 @@
+<ion-view id="rootView" hide-nav-bar="true" ng-class="!currentView.clickEventsOn ? 'disable-pointer-events' : ''">
+
+    <ion-content scroll="false">
+		<div id="introImgContainer" ng-show="root.backImgVisible"></div>
+    </ion-content>
+
+    <div class="flex_centered_1" ng-cloak>
+        <div class="flex_centered_2">
+            <ion-spinner icon="{{ currentOs.toLowerCase(); }}"></ion-spinner>
+        </div>
+    </div>
+
+</ion-view>
